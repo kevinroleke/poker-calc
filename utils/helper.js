@@ -125,7 +125,7 @@ helper.isCardsInSeq = function(cards){
 }
 
 helper.groupCardsWithEqualRank = function(params){
-	groupedCards = {};
+	var groupedCards = {};
 	for(var playerHand of params.handsArray){
 		if(groupedCards[playerHand.hand.handInfo.strength]){
 			groupedCards[playerHand.hand.handInfo.strength].push(playerHand);
@@ -144,7 +144,7 @@ helper.getHighestCards = function(params){
 	}
 	var key 		   = _.max(keys);
 	params.highestCards = groupedCards[key]
-	params.maxStrength  = key; 
+	params.maxStrength  = key;
 };
 
 helper.findHighestHand = function(params, arr, idx){
